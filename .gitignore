@@ -1,0 +1,5 @@
+# Ignore DeepSeek Architecture directory
+DeepSeek Architecture [LEARNING]/
+
+# Ignore virtual environment directory
+venv/
