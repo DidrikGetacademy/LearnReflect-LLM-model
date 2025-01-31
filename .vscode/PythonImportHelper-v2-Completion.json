@@ -1,5 +1,70 @@
 [
     {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "request",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Blueprint",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "request",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "jsonify",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "CORS",
+        "importPath": "flask_cors",
+        "description": "flask_cors",
+        "isExtraImport": true,
+        "detail": "flask_cors",
+        "documentation": {}
+    },
+    {
+        "label": "chatbot",
+        "importPath": "ChatbotAI.Route.Route",
+        "description": "ChatbotAI.Route.Route",
+        "isExtraImport": true,
+        "detail": "ChatbotAI.Route.Route",
+        "documentation": {}
+    },
+    {
+        "label": "logging",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "logging",
+        "description": "logging",
+        "detail": "logging",
+        "documentation": {}
+    },
+    {
         "label": "os",
         "kind": 6,
         "isExtraImport": true,
@@ -99,14 +164,6 @@
         "documentation": {}
     },
     {
-        "label": "nn",
-        "importPath": "torch",
-        "description": "torch",
-        "isExtraImport": true,
-        "detail": "torch",
-        "documentation": {}
-    },
-    {
         "label": "safe_open",
         "importPath": "safetensors.torch",
         "description": "safetensors.torch",
@@ -188,30 +245,6 @@
         "documentation": {}
     },
     {
-        "label": "act_quant",
-        "importPath": "kernel",
-        "description": "kernel",
-        "isExtraImport": true,
-        "detail": "kernel",
-        "documentation": {}
-    },
-    {
-        "label": "weight_dequant",
-        "importPath": "kernel",
-        "description": "kernel",
-        "isExtraImport": true,
-        "detail": "kernel",
-        "documentation": {}
-    },
-    {
-        "label": "fp8_gemm",
-        "importPath": "kernel",
-        "description": "kernel",
-        "isExtraImport": true,
-        "detail": "kernel",
-        "documentation": {}
-    },
-    {
         "label": "List",
         "importPath": "typing",
         "description": "typing",
@@ -221,30 +254,6 @@
     },
     {
         "label": "Tuple",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Tuple",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Optional",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Literal",
         "importPath": "typing",
         "description": "typing",
         "isExtraImport": true,
@@ -488,14 +497,6 @@
         "documentation": {}
     },
     {
-        "label": "dataclass",
-        "importPath": "dataclasses",
-        "description": "dataclasses",
-        "isExtraImport": true,
-        "detail": "dataclasses",
-        "documentation": {}
-    },
-    {
         "label": "torch.nn.functional",
         "kind": 6,
         "isExtraImport": true,
@@ -522,68 +523,30 @@
         "documentation": {}
     },
     {
-        "label": "Blueprint",
-        "importPath": "flask",
-        "description": "flask",
-        "isExtraImport": true,
-        "detail": "flask",
+        "label": "startup_message",
+        "kind": 2,
+        "importPath": "API.app",
+        "description": "API.app",
+        "peekOfCode": "def startup_message():\n    if not hasattr(app, 'startup_logged'):\n        logging.info(\"Flask server is starting up...\")\n        app.startup_logged = True\n@app.after_request\ndef log_requests(response):\n    logging.info(f\"{request.method} {request.path} - {response.status}\")\n    return response\nif __name__ == '__main__':\n    logging.info(\"Starting Flask server...\")",
+        "detail": "API.app",
         "documentation": {}
     },
     {
-        "label": "request",
-        "importPath": "flask",
-        "description": "flask",
-        "isExtraImport": true,
-        "detail": "flask",
+        "label": "log_requests",
+        "kind": 2,
+        "importPath": "API.app",
+        "description": "API.app",
+        "peekOfCode": "def log_requests(response):\n    logging.info(f\"{request.method} {request.path} - {response.status}\")\n    return response\nif __name__ == '__main__':\n    logging.info(\"Starting Flask server...\")\n    app.run(debug=True)",
+        "detail": "API.app",
         "documentation": {}
     },
     {
-        "label": "jsonify",
-        "importPath": "flask",
-        "description": "flask",
-        "isExtraImport": true,
-        "detail": "flask",
-        "documentation": {}
-    },
-    {
-        "label": "Flask",
-        "importPath": "flask",
-        "description": "flask",
-        "isExtraImport": true,
-        "detail": "flask",
-        "documentation": {}
-    },
-    {
-        "label": "request",
-        "importPath": "flask",
-        "description": "flask",
-        "isExtraImport": true,
-        "detail": "flask",
-        "documentation": {}
-    },
-    {
-        "label": "logging",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "logging",
-        "description": "logging",
-        "detail": "logging",
-        "documentation": {}
-    },
-    {
-        "label": "CORS",
-        "importPath": "flask_cors",
-        "description": "flask_cors",
-        "isExtraImport": true,
-        "detail": "flask_cors",
-        "documentation": {}
-    },
-    {
-        "label": "chatbot",
-        "importPath": "ChatbotAI.Route.Route",
-        "description": "ChatbotAI.Route.Route",
-        "isExtraImport": true,
-        "detail": "ChatbotAI.Route.Route",
+        "label": "app",
+        "kind": 5,
+        "importPath": "API.app",
+        "description": "API.app",
+        "peekOfCode": "app = Flask(__name__)\nCORS(app)\n# Register blueprints\napp.register_blueprint(chatbot, url_prefix='/chatbot')\n@app.before_request\ndef startup_message():\n    if not hasattr(app, 'startup_logged'):\n        logging.info(\"Flask server is starting up...\")\n        app.startup_logged = True\n@app.after_request",
+        "detail": "API.app",
         "documentation": {}
     },
     {
@@ -1325,291 +1288,93 @@
         "documentation": {}
     },
     {
-        "label": "startup_message",
-        "kind": 2,
-        "importPath": "app",
-        "description": "app",
-        "peekOfCode": "def startup_message():\n    if not hasattr(app, 'startup_logged'):\n        logging.info(\"Flask server is starting up...\")\n        app.startup_logged = True\n@app.after_request\ndef log_requests(response):\n    logging.info(f\"{request.method} {request.path} - {response.status}\")\n    return response\nif __name__ == '__main__':\n    logging.info(\"Starting Flask server...\")",
-        "detail": "app",
-        "documentation": {}
-    },
-    {
-        "label": "log_requests",
-        "kind": 2,
-        "importPath": "app",
-        "description": "app",
-        "peekOfCode": "def log_requests(response):\n    logging.info(f\"{request.method} {request.path} - {response.status}\")\n    return response\nif __name__ == '__main__':\n    logging.info(\"Starting Flask server...\")\n    app.run(debug=True)",
-        "detail": "app",
-        "documentation": {}
-    },
-    {
-        "label": "app",
-        "kind": 5,
-        "importPath": "app",
-        "description": "app",
-        "peekOfCode": "app = Flask(__name__)\nCORS(app)\n# Register blueprints\napp.register_blueprint(chatbot, url_prefix='/chatbot')\n@app.before_request\ndef startup_message():\n    if not hasattr(app, 'startup_logged'):\n        logging.info(\"Flask server is starting up...\")\n        app.startup_logged = True\n@app.after_request",
-        "detail": "app",
-        "documentation": {}
-    },
-    {
-        "label": "ModelArgs",
-        "kind": 6,
-        "importPath": "DeepSeek_Model",
-        "description": "DeepSeek_Model",
-        "peekOfCode": "class ModelArgs:\n    \"\"\"\n    Data class for defining model arguments and hyperparameters.\n    Attributes:\n        max_batch_size (int): Maximum batch size.\n        max_seq_len (int): Maximum sequence length.\n        dtype (Literal[\"bf16\", \"fp8\"]): Data type for computations.\n        vocab_size (int): Vocabulary size.\n        dim (int): Model dimension.\n        inter_dim (int): Intermediate dimension for MLP layers.",
-        "detail": "DeepSeek_Model",
-        "documentation": {}
-    },
-    {
-        "label": "ParallelEmbedding",
-        "kind": 6,
-        "importPath": "DeepSeek_Model",
-        "description": "DeepSeek_Model",
-        "peekOfCode": "class ParallelEmbedding(nn.Module):\n    \"\"\"\n    Embedding layer with parallelism support across distributed processes.\n    Args:\n        vocab_size (int): Vocabulary size.\n        dim (int): Embedding dimension.\n    \"\"\"\n    def __init__(self, vocab_size: int, dim: int):\n        super().__init__()\n        self.vocab_size = vocab_size",
-        "detail": "DeepSeek_Model",
-        "documentation": {}
-    },
-    {
-        "label": "Linear",
-        "kind": 6,
-        "importPath": "DeepSeek_Model",
-        "description": "DeepSeek_Model",
-        "peekOfCode": "class Linear(nn.Module):\n    \"\"\"\n    Custom linear layer with support for quantized weights and optional bias.\n    Args:\n        in_features (int): Number of input features.\n        out_features (int): Number of output features.\n        bias (bool): Whether to include a bias term. Defaults to False.\n        dtype (optional): Data type for the layer. Defaults to `torch.bfloat16`.\n    \"\"\"\n    dtype = torch.bfloat16",
-        "detail": "DeepSeek_Model",
-        "documentation": {}
-    },
-    {
-        "label": "ColumnParallelLinear",
-        "kind": 6,
-        "importPath": "DeepSeek_Model",
-        "description": "DeepSeek_Model",
-        "peekOfCode": "class ColumnParallelLinear(Linear):\n    \"\"\"\n    Linear layer with column parallelism, splitting output features across distributed processes.\n    Args:\n        in_features (int): Number of input features.\n        out_features (int): Total number of output features.\n        bias (bool): Whether to include a bias term. Defaults to False.\n        dtype (optional): Data type for the layer. Defaults to `torch.bfloat16`.\n    \"\"\"\n    def __init__(self, in_features: int, out_features: int, bias: bool = False, dtype = None):",
-        "detail": "DeepSeek_Model",
-        "documentation": {}
-    },
-    {
-        "label": "RowParallelLinear",
-        "kind": 6,
-        "importPath": "DeepSeek_Model",
-        "description": "DeepSeek_Model",
-        "peekOfCode": "class RowParallelLinear(Linear):\n    \"\"\"\n    Linear layer with row parallelism, splitting input features across distributed processes.\n    Args:\n        in_features (int): Total number of input features.\n        out_features (int): Number of output features.\n        bias (bool): Whether to include a bias term. Defaults to False.\n        dtype (optional): Data type for the layer. Defaults to `torch.bfloat16`.\n    \"\"\"\n    def __init__(self, in_features: int, out_features: int, bias: bool = False, dtype = None):",
-        "detail": "DeepSeek_Model",
-        "documentation": {}
-    },
-    {
-        "label": "RMSNorm",
-        "kind": 6,
-        "importPath": "DeepSeek_Model",
-        "description": "DeepSeek_Model",
-        "peekOfCode": "class RMSNorm(nn.Module):\n    \"\"\"\n    Root Mean Square Layer Normalization (RMSNorm).\n    Args:\n        dim (int): Dimension of the input tensor.\n        eps (float): Epsilon value for numerical stability. Defaults to 1e-6.\n    \"\"\"\n    def __init__(self, dim: int, eps: float = 1e-6):\n        super().__init__()\n        self.dim = dim",
-        "detail": "DeepSeek_Model",
-        "documentation": {}
-    },
-    {
-        "label": "MLA",
-        "kind": 6,
-        "importPath": "DeepSeek_Model",
-        "description": "DeepSeek_Model",
-        "peekOfCode": "class MLA(nn.Module):\n    \"\"\"\n    Multi-Headed Attention Layer (MLA).\n    Attributes:\n        dim (int): Dimensionality of the input features.\n        n_heads (int): Number of attention heads.\n        n_local_heads (int): Number of local attention heads for distributed systems.\n        q_lora_rank (int): Rank for low-rank query projection.\n        kv_lora_rank (int): Rank for low-rank key/value projection.\n        qk_nope_head_dim (int): Dimensionality of non-positional query/key projections.",
-        "detail": "DeepSeek_Model",
-        "documentation": {}
-    },
-    {
-        "label": "MLP",
-        "kind": 6,
-        "importPath": "DeepSeek_Model",
-        "description": "DeepSeek_Model",
-        "peekOfCode": "class MLP(nn.Module):\n    \"\"\"\n    Multi-Layer Perceptron (MLP) used as a feed-forward layer.\n    Attributes:\n        w1 (nn.Module): Linear layer for input-to-hidden transformation.\n        w2 (nn.Module): Linear layer for hidden-to-output transformation.\n        w3 (nn.Module): Additional linear layer for feature transformation.\n    \"\"\"\n    def __init__(self, dim: int, inter_dim: int):\n        \"\"\"",
-        "detail": "DeepSeek_Model",
-        "documentation": {}
-    },
-    {
-        "label": "Gate",
-        "kind": 6,
-        "importPath": "DeepSeek_Model",
-        "description": "DeepSeek_Model",
-        "peekOfCode": "class Gate(nn.Module):\n    \"\"\"\n    Gating mechanism for routing inputs in a mixture-of-experts (MoE) model.\n    Attributes:\n        dim (int): Dimensionality of input features.\n        topk (int): Number of top experts activated for each input.\n        n_groups (int): Number of groups for routing.\n        topk_groups (int): Number of groups to route inputs to.\n        score_func (str): Scoring function ('softmax' or 'sigmoid').\n        route_scale (float): Scaling factor for routing weights.",
-        "detail": "DeepSeek_Model",
-        "documentation": {}
-    },
-    {
-        "label": "Expert",
-        "kind": 6,
-        "importPath": "DeepSeek_Model",
-        "description": "DeepSeek_Model",
-        "peekOfCode": "class Expert(nn.Module):\n    \"\"\"\n    Expert layer for Mixture-of-Experts (MoE) models.\n    Attributes:\n        w1 (nn.Module): Linear layer for input-to-hidden transformation.\n        w2 (nn.Module): Linear layer for hidden-to-output transformation.\n        w3 (nn.Module): Additional linear layer for feature transformation.\n    \"\"\"\n    def __init__(self, dim: int, inter_dim: int):\n        \"\"\"",
-        "detail": "DeepSeek_Model",
-        "documentation": {}
-    },
-    {
-        "label": "MoE",
-        "kind": 6,
-        "importPath": "DeepSeek_Model",
-        "description": "DeepSeek_Model",
-        "peekOfCode": "class MoE(nn.Module):\n    \"\"\"\n    Mixture-of-Experts (MoE) module.\n    Attributes:\n        dim (int): Dimensionality of input features.\n        n_routed_experts (int): Total number of experts in the model.\n        n_local_experts (int): Number of experts handled locally in distributed systems.\n        n_activated_experts (int): Number of experts activated for each input.\n        gate (nn.Module): Gating mechanism to route inputs to experts.\n        experts (nn.ModuleList): List of expert modules.",
-        "detail": "DeepSeek_Model",
-        "documentation": {}
-    },
-    {
-        "label": "Block",
-        "kind": 6,
-        "importPath": "DeepSeek_Model",
-        "description": "DeepSeek_Model",
-        "peekOfCode": "class Block(nn.Module):\n    \"\"\"\n    Transformer block combining attention and feed-forward layers.\n    Attributes:\n        attn (nn.Module): Attention layer (MLA).\n        ffn (nn.Module): Feed-forward network (MLP or MoE).\n        attn_norm (nn.Module): Layer normalization for attention.\n        ffn_norm (nn.Module): Layer normalization for feed-forward network.\n    \"\"\"\n    def __init__(self, layer_id: int, args: ModelArgs):",
-        "detail": "DeepSeek_Model",
-        "documentation": {}
-    },
-    {
-        "label": "Transformer",
-        "kind": 6,
-        "importPath": "DeepSeek_Model",
-        "description": "DeepSeek_Model",
-        "peekOfCode": "class Transformer(nn.Module):\n    \"\"\"\n    Transformer model with positional embeddings, multiple layers, and output projection.\n    Attributes:\n        max_seq_len (int): Maximum sequence length for the transformer.\n        embed (nn.Module): Embedding layer for input tokens.\n        layers (torch.nn.ModuleList): List of transformer blocks.\n        norm (nn.Module): Layer normalization applied after all blocks.\n        head (nn.Module): Output projection layer mapping to vocabulary size.\n        freqs_cis (torch.Tensor): Precomputed complex exponential values for rotary embeddings.",
-        "detail": "DeepSeek_Model",
-        "documentation": {}
-    },
-    {
-        "label": "linear",
-        "kind": 2,
-        "importPath": "DeepSeek_Model",
-        "description": "DeepSeek_Model",
-        "peekOfCode": "def linear(x: torch.Tensor, weight: torch.Tensor, bias: Optional[torch.Tensor] = None) -> torch.Tensor:\n    \"\"\"\n    Applies a linear transformation to the incoming data: y = xA^T + b.\n    This function supports specialized implementations based on quantization\n    and tensor formats.\n    Args:\n        x (torch.Tensor): The input tensor.\n        weight (torch.Tensor): The weight tensor. It may be quantized and \n            requires dequantization for certain cases.\n        bias (Optional[torch.Tensor]): The bias tensor to be added. Default is None.",
-        "detail": "DeepSeek_Model",
-        "documentation": {}
-    },
-    {
-        "label": "precompute_freqs_cis",
-        "kind": 2,
-        "importPath": "DeepSeek_Model",
-        "description": "DeepSeek_Model",
-        "peekOfCode": "def precompute_freqs_cis(args: ModelArgs) -> torch.Tensor:\n    \"\"\"\n    Precomputes frequency-based complex exponential values for rotary positional embeddings.\n    Args:\n        args (ModelArgs): Model arguments containing positional embedding parameters.\n    Returns:\n        torch.Tensor: Precomputed complex exponential values for positional embeddings.\n    \"\"\"\n    dim = args.qk_rope_head_dim\n    seqlen = args.max_seq_len",
-        "detail": "DeepSeek_Model",
-        "documentation": {}
-    },
-    {
-        "label": "apply_rotary_emb",
-        "kind": 2,
-        "importPath": "DeepSeek_Model",
-        "description": "DeepSeek_Model",
-        "peekOfCode": "def apply_rotary_emb(x: torch.Tensor, freqs_cis: torch.Tensor) -> torch.Tensor:\n    \"\"\"\n    Applies rotary positional embeddings to the input tensor.\n    Args:\n        x (torch.Tensor): Input tensor with positional embeddings to be applied.\n        freqs_cis (torch.Tensor): Precomputed complex exponential values for positional embeddings.\n    Returns:\n        torch.Tensor: Tensor with rotary embeddings applied.\n    \"\"\"\n    dtype = x.dtype",
-        "detail": "DeepSeek_Model",
-        "documentation": {}
-    },
-    {
-        "label": "world_size",
-        "kind": 5,
-        "importPath": "DeepSeek_Model",
-        "description": "DeepSeek_Model",
-        "peekOfCode": "world_size = 1\nrank = 0\nblock_size = 128\ngemm_impl: Literal[\"bf16\", \"fp8\"] = \"bf16\"\nattn_impl: Literal[\"naive\", \"absorb\"] = \"absorb\"\n@dataclass\nclass ModelArgs:\n    \"\"\"\n    Data class for defining model arguments and hyperparameters.\n    Attributes:",
-        "detail": "DeepSeek_Model",
-        "documentation": {}
-    },
-    {
-        "label": "rank",
-        "kind": 5,
-        "importPath": "DeepSeek_Model",
-        "description": "DeepSeek_Model",
-        "peekOfCode": "rank = 0\nblock_size = 128\ngemm_impl: Literal[\"bf16\", \"fp8\"] = \"bf16\"\nattn_impl: Literal[\"naive\", \"absorb\"] = \"absorb\"\n@dataclass\nclass ModelArgs:\n    \"\"\"\n    Data class for defining model arguments and hyperparameters.\n    Attributes:\n        max_batch_size (int): Maximum batch size.",
-        "detail": "DeepSeek_Model",
-        "documentation": {}
-    },
-    {
-        "label": "block_size",
-        "kind": 5,
-        "importPath": "DeepSeek_Model",
-        "description": "DeepSeek_Model",
-        "peekOfCode": "block_size = 128\ngemm_impl: Literal[\"bf16\", \"fp8\"] = \"bf16\"\nattn_impl: Literal[\"naive\", \"absorb\"] = \"absorb\"\n@dataclass\nclass ModelArgs:\n    \"\"\"\n    Data class for defining model arguments and hyperparameters.\n    Attributes:\n        max_batch_size (int): Maximum batch size.\n        max_seq_len (int): Maximum sequence length.",
-        "detail": "DeepSeek_Model",
-        "documentation": {}
-    },
-    {
         "label": "LearnrReflectMConfig",
         "kind": 6,
-        "importPath": "Dream_model",
-        "description": "Dream_model",
+        "importPath": "TESTING_LEARNING_FOLDER.Dream_model",
+        "description": "TESTING_LEARNING_FOLDER.Dream_model",
         "peekOfCode": "class LearnrReflectMConfig(PretrainedConfig):\n    model_type = \"learnr_reflect_m\"\n    def __init__(\n        self,\n        vocab_size=64000,\n        max_position_embeddings=32768,\n        hidden_size=8192,\n        num_hidden_layers=60,\n        num_attention_heads=64,\n        intermediate_size=32768,",
-        "detail": "Dream_model",
+        "detail": "TESTING_LEARNING_FOLDER.Dream_model",
         "documentation": {}
     },
     {
         "label": "config",
         "kind": 5,
-        "importPath": "Dream_model",
-        "description": "Dream_model",
+        "importPath": "TESTING_LEARNING_FOLDER.Dream_model",
+        "description": "TESTING_LEARNING_FOLDER.Dream_model",
         "peekOfCode": "config = LearnrReflectMConfig()\n# Use a compatible model class and pass the configuration\nmodel = GPTNeoXForCausalLM(config)\nsave_directory = r\"C:\\Users\\didri\\Desktop\\LearnReflect Project\\LearnReflect-System\\LearnReflect_AI_chatbot\\LearnReflect_Languge_Model_ChatbotAI\\Model_Structure\"\nmodel.save_pretrained(save_directory)\n# Calculate parameter count\nparam_count = sum(p.numel() for p in model.parameters())\nprint(f\"GPT-4+ Hypothetical Parameter Count: ~{param_count/1e9:.2f}B\")",
-        "detail": "Dream_model",
+        "detail": "TESTING_LEARNING_FOLDER.Dream_model",
         "documentation": {}
     },
     {
         "label": "model",
         "kind": 5,
-        "importPath": "Dream_model",
-        "description": "Dream_model",
+        "importPath": "TESTING_LEARNING_FOLDER.Dream_model",
+        "description": "TESTING_LEARNING_FOLDER.Dream_model",
         "peekOfCode": "model = GPTNeoXForCausalLM(config)\nsave_directory = r\"C:\\Users\\didri\\Desktop\\LearnReflect Project\\LearnReflect-System\\LearnReflect_AI_chatbot\\LearnReflect_Languge_Model_ChatbotAI\\Model_Structure\"\nmodel.save_pretrained(save_directory)\n# Calculate parameter count\nparam_count = sum(p.numel() for p in model.parameters())\nprint(f\"GPT-4+ Hypothetical Parameter Count: ~{param_count/1e9:.2f}B\")",
-        "detail": "Dream_model",
+        "detail": "TESTING_LEARNING_FOLDER.Dream_model",
         "documentation": {}
     },
     {
         "label": "save_directory",
         "kind": 5,
-        "importPath": "Dream_model",
-        "description": "Dream_model",
+        "importPath": "TESTING_LEARNING_FOLDER.Dream_model",
+        "description": "TESTING_LEARNING_FOLDER.Dream_model",
         "peekOfCode": "save_directory = r\"C:\\Users\\didri\\Desktop\\LearnReflect Project\\LearnReflect-System\\LearnReflect_AI_chatbot\\LearnReflect_Languge_Model_ChatbotAI\\Model_Structure\"\nmodel.save_pretrained(save_directory)\n# Calculate parameter count\nparam_count = sum(p.numel() for p in model.parameters())\nprint(f\"GPT-4+ Hypothetical Parameter Count: ~{param_count/1e9:.2f}B\")",
-        "detail": "Dream_model",
+        "detail": "TESTING_LEARNING_FOLDER.Dream_model",
         "documentation": {}
     },
     {
         "label": "param_count",
         "kind": 5,
-        "importPath": "Dream_model",
-        "description": "Dream_model",
+        "importPath": "TESTING_LEARNING_FOLDER.Dream_model",
+        "description": "TESTING_LEARNING_FOLDER.Dream_model",
         "peekOfCode": "param_count = sum(p.numel() for p in model.parameters())\nprint(f\"GPT-4+ Hypothetical Parameter Count: ~{param_count/1e9:.2f}B\")",
-        "detail": "Dream_model",
+        "detail": "TESTING_LEARNING_FOLDER.Dream_model",
         "documentation": {}
     },
     {
         "label": "LearnrReflectMini",
         "kind": 6,
-        "importPath": "Pipeline_model",
-        "description": "Pipeline_model",
+        "importPath": "TESTING_LEARNING_FOLDER.Pipeline_model",
+        "description": "TESTING_LEARNING_FOLDER.Pipeline_model",
         "peekOfCode": "class LearnrReflectMini(PretrainedConfig):\n    model_type = \"LearnrReflectMini\"\n    def __init__(\n        self,\n        vocab_size=32000,\n        max_position_embeddings=2048,\n        hidden_size=768,         # Much smaller\n        num_hidden_layers=12,    # Reduced layer count\n        num_attention_heads=12,  # Must divide hidden_size evenly\n        intermediate_size=3072,  # 4 * hidden_size",
-        "detail": "Pipeline_model",
+        "detail": "TESTING_LEARNING_FOLDER.Pipeline_model",
         "documentation": {}
     },
     {
         "label": "#Heads",
         "kind": 5,
-        "importPath": "Pipeline_model",
-        "description": "Pipeline_model",
+        "importPath": "TESTING_LEARNING_FOLDER.Pipeline_model",
+        "description": "TESTING_LEARNING_FOLDER.Pipeline_model",
         "peekOfCode": "#Heads = 12: Divides 768 evenly (768 / 12 = 64).\n#Vocab size = 32000: You could use 32000 or 64000—lower is often enough for a small test.\n#Max position embeddings = 2048: Enough to test chunked training or attention over a decent context, while not being too big.\n#Use rotary: You can still keep rotary_emb_fraction=1.0 to confirm the code path for rotary embeddings is fine.\n#In practice, this small config should land around 100M–150M parameters (depending on exact final shapes) and let you:\n#Tokenize a dataset.\n#Load batches and verify memory usage / speed.\n#Train for a few steps to confirm loss is decreasing.\n#Debug any pipeline issues quickly.\n#Once you’ve validated that the pipeline is stable, you can scale back up to your “dream” 70‑layer, 10240‑hidden LearnrReflectM+ monster!",
-        "detail": "Pipeline_model",
+        "detail": "TESTING_LEARNING_FOLDER.Pipeline_model",
         "documentation": {}
     },
     {
         "label": "config",
         "kind": 5,
-        "importPath": "Pipeline_model",
-        "description": "Pipeline_model",
+        "importPath": "TESTING_LEARNING_FOLDER.Pipeline_model",
+        "description": "TESTING_LEARNING_FOLDER.Pipeline_model",
         "peekOfCode": "config = LearnrReflectMini()\nmodel = GPTNeoXForCausalLM(config)\nparam_count = sum(p.numel() for p in model.parameters())\nprint(f\"LearnrReflectMini Parameter Count: ~{param_count/1e6:.1f}M\")",
-        "detail": "Pipeline_model",
+        "detail": "TESTING_LEARNING_FOLDER.Pipeline_model",
         "documentation": {}
     },
     {
         "label": "model",
         "kind": 5,
-        "importPath": "Pipeline_model",
-        "description": "Pipeline_model",
+        "importPath": "TESTING_LEARNING_FOLDER.Pipeline_model",
+        "description": "TESTING_LEARNING_FOLDER.Pipeline_model",
         "peekOfCode": "model = GPTNeoXForCausalLM(config)\nparam_count = sum(p.numel() for p in model.parameters())\nprint(f\"LearnrReflectMini Parameter Count: ~{param_count/1e6:.1f}M\")",
-        "detail": "Pipeline_model",
+        "detail": "TESTING_LEARNING_FOLDER.Pipeline_model",
         "documentation": {}
     },
     {
         "label": "param_count",
         "kind": 5,
-        "importPath": "Pipeline_model",
-        "description": "Pipeline_model",
+        "importPath": "TESTING_LEARNING_FOLDER.Pipeline_model",
+        "description": "TESTING_LEARNING_FOLDER.Pipeline_model",
         "peekOfCode": "param_count = sum(p.numel() for p in model.parameters())\nprint(f\"LearnrReflectMini Parameter Count: ~{param_count/1e6:.1f}M\")",
-        "detail": "Pipeline_model",
+        "detail": "TESTING_LEARNING_FOLDER.Pipeline_model",
         "documentation": {}
     }
 ]
