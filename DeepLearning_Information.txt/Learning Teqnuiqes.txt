@@ -1,0 +1,9 @@
+Advanced Deep Learning Techniques
+------------------------------------------------------
+-gradient clipping,
+-learning rate schedules
+-curriculum learning.
+-PPO 
+
+
+Model Compression: Transformers models like GPT-2 typically don't change in size much after training unless you're using methods like pruning or quantization, which would explicitly reduce the size.
