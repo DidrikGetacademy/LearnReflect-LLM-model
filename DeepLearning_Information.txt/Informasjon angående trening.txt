@@ -1,0 +1,143 @@
+
+The loss values you're observing during training give some insight into how well the model is learning. Here's a breakdown of your loss values over the epochs:
+
+General Observations:
+Initial High Loss: The high loss values at the beginning (e.g., 7.25, 8.05) are typical for a model that's just starting to learn. The loss should decrease as the model trains.
+
+Decreasing Loss: It's a good sign that the loss values are generally decreasing over the epochs, especially in the later parts of each epoch (e.g., from around 4.26 to 1.03 in Epoch 3). This suggests that your model is learning and adapting to the data.
+
+Fluctuations: The presence of fluctuations in the loss values (e.g., some spikes up to 9.19) can indicate variability in how well the model is learning from different batches of data. This is normal, especially with a smaller dataset or with batches that contain more challenging examples.
+
+Loss in Later Epochs: The losses towards the end of Epoch 2 and the beginning of Epoch 3 are significantly lower (e.g., values around 0.93 to 2.43), which is promising. It indicates that the model is beginning to generalize better to the training data.
+
+Suggestions:
+Monitor Overfitting: Keep an eye on the loss values for validation data if you're using a validation set. If the training loss continues to decrease while the validation loss starts to increase, it might be a sign of overfitting.
+
+Learning Rate Adjustments: If you notice that loss values are oscillating a lot or plateauing, consider adjusting the learning rate. Sometimes a lower learning rate can lead to smoother convergence.
+
+More Epochs: If the loss is still decreasing at the end of your training epochs, consider training for a few more epochs to see if you can achieve even lower loss values.
+
+Batch Size: If you have the resources, experimenting with different batch sizes can help find a better balance between learning stability and speed.
+
+
+Observasjon av loss: 
+viktig å overvåke tapet. Du bør se etter en stabil nedgang i tapet over tid. Hvis tapet flater ut eller øker, kan det være et tegn på at læringsraten er for høy, og det kan være lurt å redusere den.
+
+
+input-ids
+-----------------
+tekst som har blit forvandlet till tall så modellen kan forstå
+
+
+overvåke cpu/gpu: terminal og skrive: nvidia-smi
+
+
+
+
+attention-mask
+---------------
+Hvis man har setninger med forskjellig lengde, vil attention-masken fortelle modellen hvilke ord den skal fokusere på, og hvilke den skal ignorere. Hvis en setning er kortere enn den maksimale lengden modellen kan håndtere (for eksempel 128 tokens), vil den bli fylt opp med spesielle "fyll-tokens" (padding). Modellen må vite hvilke tokens som er ekte tekst og hvilke som bare er fyll, så attention-masken brukes for å indikere dette.
+For eksempel, hvis du har setningen "Hei" som bare består av 1 token, og maks lengde er 128 tokens, vil attention-masken se slik ut: [1, 0, 0, ..., 0], der 1 betyr "bruk dette tokenet" (altså det faktiske ordet "Hei"), mens 0 betyr "ignorer dette" (alle fylle-tokens). 
+
+
+
+Læringsrate
+Høy læringsrate:
+
+Fordeler:
+
+Raskere konvergens: Modellen kan lære raskere, noe som kan redusere treningstiden.
+Fleksibilitet: Kan være nyttig i tidlige faser av trening når du ønsker å utforske området rundt det initielle punktet.
+Ulemper:
+
+Instabilitet: Modellen kan hoppe over optimale løsninger og føre til divergens, der læringen ikke stabiliserer seg.
+Overtilpasning: Det kan føre til at modellen tilpasser seg støy i treningsdataene, noe som kan svekke ytelsen på nye data.
+Lav læringsrate:
+
+Fordeler:
+
+Stabil læring: Modellen vil gjøre mindre justeringer, noe som gir en mer stabil og presis læring.
+Bedre for finjustering: Nyttig i siste fase av trening for å raffinere modellen.
+Ulemper:
+
+Langsom konvergens: Kan ta lengre tid å nå et tilfredsstillende nivå av ytelse.
+Risiko for fastlåsing: Kan bli sittende fast i lokale minima, noe som hindrer den i å finne bedre løsninger.
+Grad Norm
+Høy grad norm:
+
+Fordeler:
+
+Sterke oppdateringer: Store endringer kan hjelpe til med å overvinne hindringer i læringsprosessen.
+Rask tilpasning: Kan være nyttig i tidlige faser når du ønsker å gjøre store fremskritt.
+Ulemper:
+
+Instabilitet: Kan føre til overdrevne oppdateringer og gjøre at modellen "hopper" rundt, noe som kan hindre stabilisering.
+Risiko for eksplosjon av gradienter: Kan føre til numeriske problemer, der verdiene blir for store og ødelegger læringen.
+Lav grad norm:
+
+Fordeler:
+
+Stabilitet: Mer kontroll over oppdateringene, noe som gir jevnere læring.
+Redusert risiko for eksplosjon: Unngår numeriske problemer som kan oppstå med høye gradienter.
+Ulemper:
+
+Langsom tilpasning: Kan ta lengre tid å gjøre betydelige fremskritt.
+Mangel på fleksibilitet: Kan hindre modellen fra å gjøre store nødvendige justeringer i læringsprosessen.
+
+
+1. Sammenligning av Evaluerings- og Trenings Tap
+For å forstå om evaluerings tapet indikerer overfitting eller dårlig generalisering, må du sammenligne evaluerings tapet med trenings tapet. Her er hvordan du kan gjøre det:
+
+a. Samle Trenings Tap Verdier
+La oss si at du har fått trenings tap verdier fra de forskjellige epokene i treningen. For eksempel:
+
+Epoke 1: loss = 1.4251
+Epoke 2: loss = 1.4609
+Epoke 3: loss = 1.1409
+b. Evaluerings Tap
+Fra evalueringsresultatet ditt har du nå:
+
+Evaluerings tap for Epoke 2: eval_loss = 2.2069649696350098
+c. Sammenligning
+Nå kan du sammenligne evaluerings tapet med trenings tapene:
+
+Epoke 1:
+Trenings tap: 1.4251
+Evaluerings tap: 2.2069649696350098
+Kommentar: Evaluerings tapet er høyere. Modellen kan overfitte.
+Epoke 2:
+Trenings tap: 1.4609
+Evaluerings tap: 2.2069649696350098
+Kommentar: Igjen, evaluerings tapet er høyere. Det er en mulig indikasjon på overfitting.
+Epoke 3:
+Trenings tap: 1.1409
+Evaluerings tap: (Har ikke dette tallet ennå, så det må vurderes etter neste evalueringsrunde.)
+2. Hva Betyr Dette?
+Overfitting: Hvis evaluerings tapet er mye høyere enn trenings tapet, kan det være et tegn på at modellen har lært å gjenkjenne treningsdataene altfor godt (overfitting), og dermed ikke klarer å generalisere til nye data.
+Modelljustering: I så fall kan du vurdere å:
+Redusere antall epoker for trening.
+Justere læringsraten (kanskje redusere den).
+Bruke teknikker som tidlig stopp (early stopping) for å hindre overfitting.
+Prøve å endre hyperparametrene i treningsprosessen, som batch-størrelse eller vekttap.
+
+
+vis modellen overfitter kan disse modeljusteringene hjelpe
+-Redusere antall epoker for trening.
+-Justere læringsraten (kanskje redusere den).
+-Bruke teknikker som tidlig stopp (early stopping) for å hindre overfitting.
+-Prøve å endre hyperparametrene i treningsprosessen, som batch-størrelse eller vekttap.
+
+
+
+Tenk på under trening og fremtidig trening:
+Start med en passende læringsrate: Prøv ulike verdier for å finne en balanse mellom hastighet og stabilitet. Du kan bruke teknikker som læringsrate-scheduler for å justere raten under trening.
+
+Bruk gradientklipping: For å håndtere høye gradientnormer, kan du bruke gradientklipping for å begrense størrelsen på oppdateringene og forhindre eksplosjon av gradienter.
+
+Finjustering: Når du nærmer deg sluttresultatet, vurder å redusere læringsraten for å forbedre stabiliteten og presisjonen.
+
+Evaluering: Hold øye med trenings- og valideringsresultater for å sikre at modellen ikke overfitter. Juster læringsrate og grad norm basert på ytelsen.
+
+Kryssvalidering: Bruk kryssvalidering for å teste modellens ytelse med forskjellige læringsrater og gradientnormer for å sikre at du finner en robust modell.
+
+Hyperparameter tuning: Utfør hyperparameter tuning for å finne de beste innstillingene for læringsrate og gradientnorm for spesifikke oppgaver.
