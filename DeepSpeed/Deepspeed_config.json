@@ -4,7 +4,7 @@
     "gradient_accumulation_steps": 4,
     "world_size": 2, 
     "steps_per_print": 10,
-    "bf16": {
+    "bfloat16": {
         "enabled": true  
     },
     "zero_optimization": {

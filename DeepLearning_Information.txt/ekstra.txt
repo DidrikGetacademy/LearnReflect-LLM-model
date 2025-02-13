@@ -1,0 +1,1 @@
+C:\Users\didri>ollama run deepseek-r1:7b
